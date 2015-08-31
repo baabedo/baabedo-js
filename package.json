@@ -1,0 +1,37 @@
+{
+  "name": "baabedo",
+  "version": "0.0.1",
+  "description": "Baabedo API wrapper",
+  "keywords": [
+    "baabedo",
+    "amazon",
+    "pricing",
+    "ecommerce",
+    "api"
+  ],
+  "homepage": "https://github.com/baabedo/baabedo-js",
+  "author": "Baabedo <michael.hirn@baabedo.com> (https://baabedo.com/)",
+  "contributors": [
+    "Michael Hirn <michael.hirn@storeness.de>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/baabedo/baabedo-js.git"
+  },
+  "bugs:": "https://github.com/baabedo/baabedo-js/issues",
+  "main": "lib/baabedo.js",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "chai-as-promised": "^5.1.0",
+    "mocha": "^2.3.0"
+  },
+  "dependencies": {
+    "bluebird": "^2.9.6",
+    "qs": "^2.4.1",
+    "lodash": "^3.1.0"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha"
+  }
+}
