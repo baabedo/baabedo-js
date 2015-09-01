@@ -1,8 +1,18 @@
 # Baabedo API JS-Client for Node and Browser
 
+The package can be used in node.js and browser environments. Just
+`require('baabedo')`. If you want to use it in your client/browser app, just
+`browserify` your app, which requires `baabedo`.
+
 ## Installation
 
 `npm install baabedo`
+
+To get a js file you can use in the frontend run  
+```bash
+$ npm install -g browserify
+$ browserify lib/baabedo.js -o bundle.js -s Baabedo
+```
 
 ## API Overview
 

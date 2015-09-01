@@ -15,7 +15,7 @@ describe('Customers Resource', function() {
       baabedo.channels.retrieve('cus_2dkAb792h1mfa4');
       expect(baabedo.LAST_REQUEST).to.deep.equal({
         method: 'GET',
-        url: '/v1/channels/cus_2dkAb792h1mfa4',
+        url: '/beta/channels/cus_2dkAb792h1mfa4',
         headers: {},
         data: {}
       });
@@ -27,7 +27,7 @@ describe('Customers Resource', function() {
       baabedo.channels.retrieve('cus_2dkAb792h1mfa4', TEST_AUTH_KEY);
       expect(baabedo.LAST_REQUEST).to.deep.equal({
         method: 'GET',
-        url: '/v1/channels/cus_2dkAb792h1mfa4',
+        url: '/beta/channels/cus_2dkAb792h1mfa4',
         headers: {},
         data: {},
         auth: TEST_AUTH_KEY
@@ -44,7 +44,7 @@ describe('Customers Resource', function() {
       baabedo.channels.create({ description: 'Some customer' });
       expect(baabedo.LAST_REQUEST).to.deep.equal({
         method: 'POST',
-        url: '/v1/channels',
+        url: '/beta/channels',
         headers: {},
         data: { description: 'Some customer' }
       });
@@ -56,7 +56,7 @@ describe('Customers Resource', function() {
       baabedo.channels.create({ description: 'Some customer' }, TEST_AUTH_KEY);
       expect(baabedo.LAST_REQUEST).to.deep.equal({
         method: 'POST',
-        url: '/v1/channels',
+        url: '/beta/channels',
         headers: {},
         data: { description: 'Some customer' },
         auth: TEST_AUTH_KEY
@@ -69,7 +69,7 @@ describe('Customers Resource', function() {
       baabedo.channels.create(TEST_AUTH_KEY);
       expect(baabedo.LAST_REQUEST).to.deep.equal({
         method: 'POST',
-        url: '/v1/channels',
+        url: '/beta/channels',
         headers: {},
         data: {},
         auth: TEST_AUTH_KEY
@@ -82,7 +82,7 @@ describe('Customers Resource', function() {
       baabedo.channels.create({ description: 'Some customer' }, { idempotency_key: 'foo' });
       expect(baabedo.LAST_REQUEST).to.deep.equal({
         method: 'POST',
-        url: '/v1/channels',
+        url: '/beta/channels',
         headers: {'Idempotency-Key': 'foo'},
         data: { description: 'Some customer' },
       });
@@ -94,7 +94,7 @@ describe('Customers Resource', function() {
       baabedo.channels.create({ description: 'Some customer' }, { api_key: TEST_AUTH_KEY });
       expect(baabedo.LAST_REQUEST).to.deep.equal({
         method: 'POST',
-        url: '/v1/channels',
+        url: '/beta/channels',
         headers: {},
         data: { description: 'Some customer' },
         auth: TEST_AUTH_KEY
@@ -107,7 +107,7 @@ describe('Customers Resource', function() {
       baabedo.channels.create({ description: 'Some customer' }, { api_key: TEST_AUTH_KEY, idempotency_key: 'foo'});
       expect(baabedo.LAST_REQUEST).to.deep.equal({
         method: 'POST',
-        url: '/v1/channels',
+        url: '/beta/channels',
         headers: {'Idempotency-Key': 'foo'},
         data: { description: 'Some customer' },
         auth: TEST_AUTH_KEY
@@ -121,7 +121,7 @@ describe('Customers Resource', function() {
       baabedo.channels.create({ api_key: TEST_AUTH_KEY });
       expect(baabedo.LAST_REQUEST).to.deep.equal({
         method: 'POST',
-        url: '/v1/channels',
+        url: '/beta/channels',
         headers: {},
         data: {},
         auth: TEST_AUTH_KEY
@@ -139,7 +139,7 @@ describe('Customers Resource', function() {
       baabedo.channels.del('cus_2dkAb792h1mfa4');
       expect(baabedo.LAST_REQUEST).to.deep.equal({
         method: 'DELETE',
-        url: '/v1/channels/cus_2dkAb792h1mfa4',
+        url: '/beta/channels/cus_2dkAb792h1mfa4',
         headers: {},
         data: {}
       });
@@ -155,7 +155,7 @@ describe('Customers Resource', function() {
       baabedo.channels.list();
       expect(baabedo.LAST_REQUEST).to.deep.equal({
         method: 'GET',
-        url: '/v1/channels',
+        url: '/beta/channels',
         headers: {},
         data: {}
       });
@@ -167,7 +167,7 @@ describe('Customers Resource', function() {
       baabedo.channels.list(TEST_AUTH_KEY);
       expect(baabedo.LAST_REQUEST).to.deep.equal({
         method: 'GET',
-        url: '/v1/channels',
+        url: '/beta/channels',
         headers: {},
         data: {},
         auth: TEST_AUTH_KEY
@@ -186,7 +186,7 @@ describe('Customers Resource', function() {
         baabedo.channels.searchProducts('channelIdFoo321');
         expect(baabedo.LAST_REQUEST).to.deep.equal({
           method: 'GET',
-          url: '/v1/channels/channelIdFoo321/search/products',
+          url: '/beta/channels/channelIdFoo321/search/products',
           headers: {},
           data: {}
         });
@@ -212,7 +212,7 @@ describe('Customers Resource', function() {
         baabedo.channels.createProductOrders('channelIdFoo321', payload);
         expect(baabedo.LAST_REQUEST).to.deep.equal({
           method: 'PUT',
-          url: '/v1/channels/channelIdFoo321/product_orders',
+          url: '/beta/channels/channelIdFoo321/product_orders',
           headers: {},
           data: payload
         });
@@ -230,7 +230,7 @@ describe('Customers Resource', function() {
         baabedo.channels.createProductOrders('channelIdFoo321', payload, TEST_AUTH_KEY);
         expect(baabedo.LAST_REQUEST).to.deep.equal({
           method: 'PUT',
-          url: '/v1/channels/channelIdFoo321/product_orders',
+          url: '/beta/channels/channelIdFoo321/product_orders',
           headers: {},
           data: payload,
           auth: TEST_AUTH_KEY
@@ -253,7 +253,7 @@ describe('Customers Resource', function() {
         baabedo.channels.updateProductOrders('channelIdFoo321', payload);
         expect(baabedo.LAST_REQUEST).to.deep.equal({
           method: 'PUT',
-          url: '/v1/channels/channelIdFoo321/product_orders',
+          url: '/beta/channels/channelIdFoo321/product_orders',
           headers: {},
           data: payload
         });
@@ -271,7 +271,7 @@ describe('Customers Resource', function() {
         baabedo.channels.updateProductOrders('channelIdFoo321', payload, TEST_AUTH_KEY);
         expect(baabedo.LAST_REQUEST).to.deep.equal({
           method: 'PUT',
-          url: '/v1/channels/channelIdFoo321/product_orders',
+          url: '/beta/channels/channelIdFoo321/product_orders',
           headers: {},
           data: payload,
           auth: TEST_AUTH_KEY
@@ -288,7 +288,7 @@ describe('Customers Resource', function() {
         baabedo.channels.listProductOrders('channelIdFoo321');
         expect(baabedo.LAST_REQUEST).to.deep.equal({
           method: 'GET',
-          url: '/v1/channels/channelIdFoo321/product_orders',
+          url: '/beta/channels/channelIdFoo321/product_orders',
           headers: {},
           data: {}
         });
@@ -300,7 +300,7 @@ describe('Customers Resource', function() {
         baabedo.channels.listProductOrders('channelIdFoo321', TEST_AUTH_KEY);
         expect(baabedo.LAST_REQUEST).to.deep.equal({
           method: 'GET',
-          url: '/v1/channels/channelIdFoo321/product_orders',
+          url: '/beta/channels/channelIdFoo321/product_orders',
           headers: {},
           data: {},
           auth: TEST_AUTH_KEY
@@ -318,7 +318,7 @@ describe('Customers Resource', function() {
         baabedo.channels.updateProductOrder('channelIdFoo321', 'orderItemIdFoo456', payload);
         expect(baabedo.LAST_REQUEST).to.deep.equal({
           method: 'PUT',
-          url: '/v1/channels/channelIdFoo321/product_orders/orderItemIdFoo456',
+          url: '/beta/channels/channelIdFoo321/product_orders/orderItemIdFoo456',
           headers: {},
           data: payload
         });
@@ -331,7 +331,7 @@ describe('Customers Resource', function() {
         baabedo.channels.updateProductOrder('channelIdFoo321', 'orderItemIdFoo456', payload, TEST_AUTH_KEY);
         expect(baabedo.LAST_REQUEST).to.deep.equal({
           method: 'PUT',
-          url: '/v1/channels/channelIdFoo321/product_orders/orderItemIdFoo456',
+          url: '/beta/channels/channelIdFoo321/product_orders/orderItemIdFoo456',
           headers: {},
           data: payload,
           auth: TEST_AUTH_KEY
@@ -354,7 +354,7 @@ describe('Customers Resource', function() {
         baabedo.channels.retrieveStatisticsProfit('channelIdFoo321');
         expect(baabedo.LAST_REQUEST).to.deep.equal({
           method: 'GET',
-          url: '/v1/channels/channelIdFoo321/statistics/profit',
+          url: '/beta/channels/channelIdFoo321/statistics/profit',
           headers: {},
           data: {}
         });
@@ -366,7 +366,7 @@ describe('Customers Resource', function() {
         baabedo.channels.retrieveStatisticsProfit('channelIdFoo321', TEST_AUTH_KEY);
         expect(baabedo.LAST_REQUEST).to.deep.equal({
           method: 'GET',
-          url: '/v1/channels/channelIdFoo321/statistics/profit',
+          url: '/beta/channels/channelIdFoo321/statistics/profit',
           headers: {},
           data: {},
           auth: TEST_AUTH_KEY
@@ -383,7 +383,7 @@ describe('Customers Resource', function() {
         baabedo.channels.retrieveStatisticsRevenue('channelIdFoo321');
         expect(baabedo.LAST_REQUEST).to.deep.equal({
           method: 'GET',
-          url: '/v1/channels/channelIdFoo321/statistics/revenue',
+          url: '/beta/channels/channelIdFoo321/statistics/revenue',
           headers: {},
           data: {}
         });
@@ -395,7 +395,7 @@ describe('Customers Resource', function() {
         baabedo.channels.retrieveStatisticsRevenue('channelIdFoo321', TEST_AUTH_KEY);
         expect(baabedo.LAST_REQUEST).to.deep.equal({
           method: 'GET',
-          url: '/v1/channels/channelIdFoo321/statistics/revenue',
+          url: '/beta/channels/channelIdFoo321/statistics/revenue',
           headers: {},
           data: {},
           auth: TEST_AUTH_KEY
@@ -418,7 +418,7 @@ describe('Customers Resource', function() {
         });
         expect(baabedo.LAST_REQUEST).to.deep.equal({
           method: 'POST',
-          url: '/v1/channels/channelIdFoo321/products',
+          url: '/beta/channels/channelIdFoo321/products',
           headers: {},
           data: { plan: 'gold', quantity: '12' }
         });
@@ -432,7 +432,7 @@ describe('Customers Resource', function() {
         }, TEST_AUTH_KEY);
         expect(baabedo.LAST_REQUEST).to.deep.equal({
           method: 'POST',
-          url: '/v1/channels/channelIdFoo321/products',
+          url: '/beta/channels/channelIdFoo321/products',
           headers: {},
           data: { plan: 'gold', quantity: '12' },
           auth: TEST_AUTH_KEY
@@ -453,7 +453,7 @@ describe('Customers Resource', function() {
         baabedo.channels.createProducts('channelIdFoo321', payload);
         expect(baabedo.LAST_REQUEST).to.deep.equal({
           method: 'PUT',
-          url: '/v1/channels/channelIdFoo321/products',
+          url: '/beta/channels/channelIdFoo321/products',
           headers: {},
           data: payload
         });
@@ -469,7 +469,7 @@ describe('Customers Resource', function() {
         baabedo.channels.createProducts('channelIdFoo321', payload, TEST_AUTH_KEY);
         expect(baabedo.LAST_REQUEST).to.deep.equal({
           method: 'PUT',
-          url: '/v1/channels/channelIdFoo321/products',
+          url: '/beta/channels/channelIdFoo321/products',
           headers: {},
           data: payload,
           auth: TEST_AUTH_KEY
@@ -490,7 +490,7 @@ describe('Customers Resource', function() {
         baabedo.channels.updateProducts('channelIdFoo321', payload);
         expect(baabedo.LAST_REQUEST).to.deep.equal({
           method: 'PUT',
-          url: '/v1/channels/channelIdFoo321/products',
+          url: '/beta/channels/channelIdFoo321/products',
           headers: {},
           data: payload
         });
@@ -506,7 +506,7 @@ describe('Customers Resource', function() {
         baabedo.channels.updateProducts('channelIdFoo321', payload, TEST_AUTH_KEY);
         expect(baabedo.LAST_REQUEST).to.deep.equal({
           method: 'PUT',
-          url: '/v1/channels/channelIdFoo321/products',
+          url: '/beta/channels/channelIdFoo321/products',
           headers: {},
           data: payload,
           auth: TEST_AUTH_KEY
@@ -523,7 +523,7 @@ describe('Customers Resource', function() {
         baabedo.channels.listProducts('channelIdFoo321');
         expect(baabedo.LAST_REQUEST).to.deep.equal({
           method: 'GET',
-          url: '/v1/channels/channelIdFoo321/products',
+          url: '/beta/channels/channelIdFoo321/products',
           headers: {},
           data: {}
         });
@@ -535,7 +535,7 @@ describe('Customers Resource', function() {
         baabedo.channels.listProducts('channelIdFoo321', TEST_AUTH_KEY);
         expect(baabedo.LAST_REQUEST).to.deep.equal({
           method: 'GET',
-          url: '/v1/channels/channelIdFoo321/products',
+          url: '/beta/channels/channelIdFoo321/products',
           headers: {},
           data: {},
           auth: TEST_AUTH_KEY
@@ -552,7 +552,7 @@ describe('Customers Resource', function() {
         baabedo.channels.retrieveProduct('channelIdFoo321', 'productIdFoo456');
         expect(baabedo.LAST_REQUEST).to.deep.equal({
           method: 'GET',
-          url: '/v1/channels/channelIdFoo321/products/productIdFoo456',
+          url: '/beta/channels/channelIdFoo321/products/productIdFoo456',
           headers: {},
           data: {}
         });
@@ -564,7 +564,7 @@ describe('Customers Resource', function() {
         baabedo.channels.retrieveProduct('channelIdFoo321', 'productIdFoo456', TEST_AUTH_KEY);
         expect(baabedo.LAST_REQUEST).to.deep.equal({
           method: 'GET',
-          url: '/v1/channels/channelIdFoo321/products/productIdFoo456',
+          url: '/beta/channels/channelIdFoo321/products/productIdFoo456',
           headers: {},
           data: {},
           auth: TEST_AUTH_KEY
@@ -582,7 +582,7 @@ describe('Customers Resource', function() {
         baabedo.channels.updateProduct('channelIdFoo321', 'productIdFoo456', payload);
         expect(baabedo.LAST_REQUEST).to.deep.equal({
           method: 'PUT',
-          url: '/v1/channels/channelIdFoo321/products/productIdFoo456',
+          url: '/beta/channels/channelIdFoo321/products/productIdFoo456',
           headers: {},
           data: payload
         });
@@ -595,7 +595,7 @@ describe('Customers Resource', function() {
         baabedo.channels.updateProduct('channelIdFoo321', 'productIdFoo456', payload, TEST_AUTH_KEY);
         expect(baabedo.LAST_REQUEST).to.deep.equal({
           method: 'PUT',
-          url: '/v1/channels/channelIdFoo321/products/productIdFoo456',
+          url: '/beta/channels/channelIdFoo321/products/productIdFoo456',
           headers: {},
           data: payload,
           auth: TEST_AUTH_KEY
