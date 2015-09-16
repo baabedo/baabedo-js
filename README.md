@@ -14,6 +14,8 @@ $ npm install -g browserify
 $ browserify lib/baabedo.js -o bundle.js -s Baabedo
 ```
 
+> Note: You can specify a custom API url by providing the ENV variable `BAABEDO_API_URL`
+
 ## API Overview
 
 Every resource is accessed via your `baabedo` instance:
