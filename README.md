@@ -83,11 +83,11 @@ baabedo.channels.create({
   * _Search_
   * `searchProducts(channelId)`
  * __Payment_Plans__
-  * `list([params])` _not yet implemented_
+  * `list([params])`
   * `updateSubscription(params)` _not yet implemented_
   * `cancelSubscription(params)` _not yet implemented_
  * __Payment_Information__
-  * `list([params])` _not yet implemented_
+  * `list([params])`
   * `update(params)` _not yet implemented_
   * `retrieveClientToken(params)` _not yet implemented_
 

@@ -6,7 +6,7 @@ var Promise = require('bluebird');
 
 var TEST_AUTH_KEY = 'aGN0bIwXnHdw5645VABjPdSn8nWY7G11';
 
-describe('Customers Resource', function() {
+describe('Channels Resource', function() {
 
   describe('retrieve', function() {
 
