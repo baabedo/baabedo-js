@@ -15,7 +15,7 @@ describe('PaymentPlans Resource', function() {
       baabedo.paymentPlans.list();
       expect(baabedo.LAST_REQUEST).to.deep.equal({
         method: 'GET',
-        url: '/beta/payment/plans',
+        url: '/beta/payment_plans',
         headers: {},
         data: {}
       });
@@ -27,7 +27,7 @@ describe('PaymentPlans Resource', function() {
       baabedo.paymentPlans.list(TEST_AUTH_KEY);
       expect(baabedo.LAST_REQUEST).to.deep.equal({
         method: 'GET',
-        url: '/beta/payment/plans?access_token=' + TEST_AUTH_KEY,
+        url: '/beta/payment_plans?access_token=' + TEST_AUTH_KEY,
         headers: {},
         data: {},
         auth: TEST_AUTH_KEY
