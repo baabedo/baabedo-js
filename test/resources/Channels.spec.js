@@ -183,12 +183,13 @@ describe('Channels Resource', function() {
 
       it('Sends the correct request', function() {
 
-        baabedo.channels.searchProducts('channelIdFoo321');
+        baabedo.channels.searchProducts('channelIdFoo321', { query: 'TEST', api_key: TEST_AUTH_KEY });
         expect(baabedo.LAST_REQUEST).to.deep.equal({
           method: 'GET',
-          url: '/beta/channels/channelIdFoo321/search/products',
+          url: '/beta/channels/channelIdFoo321/search/products?query=TEST&access_token=' + TEST_AUTH_KEY,
           headers: {},
-          data: {}
+          data: {},
+          auth: TEST_AUTH_KEY
         });
 
       });

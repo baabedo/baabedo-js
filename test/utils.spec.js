@@ -151,6 +151,7 @@ describe('utils', function() {
       expect(utils.getOptionsFromArgs(args)).to.deep.equal({
         auth: 'sk_test_iiiiiiiiiiiiiiiiiiiiiiii',
         headers: {},
+        query: { access_token: 'sk_test_iiiiiiiiiiiiiiiiiiiiiiii' }
       });
       expect(args.length).to.equal(0);
     });
@@ -159,6 +160,7 @@ describe('utils', function() {
       expect(utils.getOptionsFromArgs(args)).to.deep.equal({
         auth: null,
         headers: {'Idempotency-Key': 'foo'},
+        query: {}
       });
       expect(args.length).to.equal(1);
     });
@@ -170,6 +172,7 @@ describe('utils', function() {
       expect(utils.getOptionsFromArgs(args)).to.deep.equal({
         auth: 'sk_test_iiiiiiiiiiiiiiiiiiiiiiii',
         headers: {'Idempotency-Key': 'foo'},
+        query: {'access_token': 'sk_test_iiiiiiiiiiiiiiiiiiiiiiii'},
       });
       expect(args.length).to.equal(1);
     });
@@ -181,6 +184,7 @@ describe('utils', function() {
       expect(utils.getOptionsFromArgs(args)).to.deep.equal({
         auth: 'sk_test_iiiiiiiiiiiiiiiiiiiiiiii',
         headers: {'Idempotency-Key': 'foo'},
+        query: {'access_token': 'sk_test_iiiiiiiiiiiiiiiiiiiiiiii'},
       });
       expect(args.length).to.equal(0);
     });
